@@ -89,4 +89,21 @@ namespace lab10
             Speed = speed;
         }
     }
+
+    class Plane
+    {
+        public int Speed { get; set; }
+        public int Height { get; set; }
+        Plane(int speed, int height)
+        {
+            Speed = speed;
+            Height = height;
+        }
+        Plane()
+        {
+            Speed = 1000;
+            Height = 5000;
+        }
+    }
+
 }
