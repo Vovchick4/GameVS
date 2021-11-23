@@ -81,4 +81,12 @@ namespace lab10
             }
         }
     }
+    class Car
+    {
+        public int Speed { get; set; }
+        Car(int speed)
+        {
+            Speed = speed;
+        }
+    }
 }
