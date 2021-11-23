@@ -50,6 +50,43 @@ namespace lab10
             }
         }
 
+        static void AddPlayerToTeam(string[] team, List<Player> players)
+        {
+            int b1 = 0, b2 = 0, b3 = 0, k = 0;
+            int j;
+            for (int i = 0; i < team.Length; i++)
+            {
+                j = 0;
+                j += k;
+                for (; j < players.Count; j++)
+                {
+
+                    if (players[j].VehicleType == 1 && b1 != 3)
+                    {
+                        team[i] = players[j].Name;
+                        players.Remove(players[j]);
+                        b1++;
+                        break;
+                    }
+                    else if (players[j].VehicleType == 2 && b2 != 3)
+                    {
+                        team[i] = players[j].Name;
+                        players.Remove(players[j]);
+                        b2++;
+                        break;
+                    }
+                    else if (players[j].VehicleType == 3 && b3 != 3)
+                    {
+                        team[i] = players[j].Name;
+                        players.Remove(players[j]);
+                        b3++;
+                        break;
+                    }
+                    k++;
+                }
+            }
+        }
+        //duplicate
         class Card : IComparable
         {
             public string Name { get; set; }
