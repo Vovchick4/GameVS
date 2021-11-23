@@ -49,5 +49,36 @@ namespace lab10
                 }
             }
         }
+
+        class Card : IComparable
+        {
+            public string Name { get; set; }
+            public int HealthPlayer { get; set; }
+            public int VehicleType { get; set; }
+            public Card(string Name, int HealthPlayer, int VehicleType)
+            {
+                this.Name = Name;
+                this.HealthPlayer = HealthPlayer;
+                this.VehicleType = VehicleType;
+            }
+
+            public int CompareTo(object obj)
+            {
+                Card card = obj as Card;
+                if (card != null)
+                {
+                    return card.HealthPlayer.CompareTo(this.HealthPlayer);
+                }
+                else
+                {
+                    throw new Exception("Cannot to compare");
+                }
+            }
+
+            public string Print(object obj)
+            {
+                return "HealthPlayer = " + HealthPlayer;
+            }
+        }
     }
 }
