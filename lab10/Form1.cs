@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace lab10
 {
@@ -20,6 +23,31 @@ namespace lab10
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+        class Player : IComparable
+        {
+            public string Name { get; set; }
+            public int WaitingTime { get; set; }
+            public int VehicleType { get; set; }
+            public Player(string Name, int WaitingTime, int VehicleType)
+            {
+                this.Name = Name;
+                this.WaitingTime = WaitingTime;
+                this.VehicleType = VehicleType;
+            }
+
+            public int CompareTo(object obj)
+            {
+                Player p = obj as Player;
+                if (p != null)
+                {
+                    return p.WaitingTime.CompareTo(this.WaitingTime);
+                }
+                else
+                {
+                    throw new Exception("Cannot to compare");
+                }
+            }
         }
     }
 }
