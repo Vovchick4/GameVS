@@ -115,6 +115,7 @@ namespace lab10
             public string Print(object obj)
             {
                 return "HealthPlayer = " + HealthPlayer;
+                //comment
             }
         }
     }
